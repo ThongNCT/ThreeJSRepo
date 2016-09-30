@@ -1,0 +1,29 @@
+﻿<html>
+<head>
+    <title>3D Model in web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--All necessary libraries-->
+    <script src="lib-all.js"></script>
+    <!--Application scripts-->
+    <script src="threejs-all.js"></script>
+
+    <!-- Bootstrap via SystemJS -->
+    <script>
+        System.config({
+            packages: {
+                "app": {
+                    defaultExtension: 'js'
+                }
+            }
+        });
+        System.import('app/boot')
+            .then(null, console.error.bind(console));
+    </script>
+</head>
+
+<body>
+    <!-- Application PlaceHolder -->
+    <testcomponent>Loading...</testcomponent>
+</body>
+</html> 

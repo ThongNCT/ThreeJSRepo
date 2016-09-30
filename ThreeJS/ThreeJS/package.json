@@ -1,0 +1,40 @@
+{
+  "name": "threejs",
+  "version": "1.0.0",
+  "description": "ThreeJS demo",
+  "main": "index.js",
+  "dependencies": {
+    "angular2": "^2.0.0-beta.8",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.35.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "^5.0.0-beta.6",
+    "systemjs": "0.19.22",
+    "tsd": "^0.6.5",
+    "typescript": "^2.0.3",
+    "zone.js": "^0.6.25"
+  },
+  "devDependencies": {
+    "angular2": "^2.0.0-beta.17",
+    "es6-shim": "^0.35.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-ts": "^6.0.0-beta.3",
+    "rxjs": "^5.0.0-beta.6",
+    "three-js": "^79.0.0",
+    "typescript": "^2.0.3",
+    "zone.js": "^0.6.25"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "ctu",
+  "license": "ISC"
+}
