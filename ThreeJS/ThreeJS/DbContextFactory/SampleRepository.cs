@@ -30,6 +30,11 @@ namespace ThreeJS.DbContextFactory {
 
         #region IDisposable Support
         private bool disposedValue = false; // To detect redundant calls
+        private SampleContext sampleContext;
+
+        public SampleRepository(SampleContext sampleContext) {
+            this.sampleContext = sampleContext;
+        }
 
         protected virtual void Dispose(bool disposing) {
             if (!disposedValue) {
