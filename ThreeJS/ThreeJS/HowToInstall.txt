@@ -1,0 +1,3 @@
+- Install NodeJs
+- Open command line in folder of project web 
+- Install grunt: npm install grunt.js

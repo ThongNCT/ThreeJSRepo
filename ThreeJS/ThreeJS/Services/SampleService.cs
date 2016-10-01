@@ -1,5 +1,5 @@
 ﻿namespace ThreeJS.Services {
-    public class ObjectService {
+    public class SampleService {
 
     }
 }
