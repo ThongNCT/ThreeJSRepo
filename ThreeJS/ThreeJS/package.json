@@ -4,7 +4,8 @@
   "description": "ThreeJS demo",
   "main": "index.js",
   "dependencies": {
-    "angular2": "^2.0.0-beta.8",
+    "angular2": "^2.0.0-beta.17",
+    "bootstrap": "^4.0.0-alpha.4",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.35.0",
     "grunt-contrib-concat": "^1.0.1",
