@@ -27,20 +27,7 @@ module.exports = function (grunt) {
             appScripts: {
                 src: ['wwwroot/app/**/*.js'],
                 dest: 'wwwroot/threejs-all.js',
-            },
-            libScripts: {
-                src: [
-                //IE required polyfills
-                'node_modules/es6-shim/es6-shim.min.js',
-                'node_modules/systemjs/dist/system-polyfills.js',
-                // Angular2 libraries
-                'node_modules/angular2/bundles/angular2-polyfills.js',
-                'node_modules/systemjs/dist/system.src.js',
-                'node_modules/rxjs/bundles/Rx.js',
-                'node_modules/angular2/bundles/angular2.dev.js'
-                ],
-                dest: 'wwwroot/lib-all.js',
-            },
+            }
         },
         uglify: {
             my_target: {
