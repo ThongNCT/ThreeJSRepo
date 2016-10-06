@@ -15,7 +15,10 @@ module.exports = function (grunt) {
         ts: {
             base: {
                 //src: ['abc'],
-                src: ['Scripts/app/boot.ts', 'Scripts/app/**/*.ts'],
+                src: [
+                    'Scripts/app/boot.ts', 
+                    'Scripts/app/**/*.ts'
+                ],
                 outDir: 'wwwroot/app',
                 tsconfig: './tsconfig.json'
             }
@@ -48,27 +51,13 @@ module.exports = function (grunt) {
         // Copy all JS files from external libraries and required NPM packages to wwwroot/js
         copy: {
             main: {
-                files: [
-                {
-                    expand: true,
-                    flatten: true,
+                files: [{ 
+                    expand: true, 
                     src: [
-                        //'Script/app/**/*.js'
-                    ],
-                    dest: 'wwwroot/app/',
-                    filter: 'isFile'
-                },
-                {
-                    expand: true,
-                    flatten: true,
-                    src: [
-                        'node_modules/**/*.js',
-                        'node_modules/**/build/*.js',
-                        'node_modules/**/client/*.js',
-                        'node_modules/**/dist/*.js'
-                    ],
-                    dest: 'wwwroot/lib/',
-                    filter: 'isFile'
+                        'node_modules/**',
+                        'external_modules/**'
+                    ], 
+                    dest: 'wwwroot/' 
                 }]
             }
         },

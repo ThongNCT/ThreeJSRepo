@@ -7,8 +7,15 @@
 
     <!-- 1. Load libraries -->
      <!-- Polyfill(s) for older browsers -->
-    <script src="lib-all.js"></script>
-    <script src="threejs-all.js"></script>
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="node_modules/external_modules/carouFredSel/jquery.carouFredSel-6.2.1.js"></script>
 
     <!-- 2. Configure SystemJS -->
     <script src="systemjs.config.js"></script>
@@ -19,6 +26,12 @@
 
   <!-- 3. Display the application -->
   <body>
-    <my-app>Loading...</my-app>
+    <my-app>
+      <div class="splash">
+            <div class="message">
+                3D Image Viewer
+            </div>
+        </div>
+    </my-app>
   </body>
 </html>
