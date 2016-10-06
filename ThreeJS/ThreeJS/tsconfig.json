@@ -7,10 +7,10 @@
         "noImplicitAny": false,
         "noEmitOnError": true,
         "removeComments": false,
-        "target": "es6"
+        "target": "es5"
     },
-    "exclude": [
-        "node_modules",
-        "wwwroot"
+    "exclude": [ 
+        "node_modules", 
+        "wwwroot" 
     ]
 }

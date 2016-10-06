@@ -62,7 +62,10 @@ module.exports = function (grunt) {
                     expand: true,
                     flatten: true,
                     src: [
-                        'node_modules/**/*.js'
+                        'node_modules/**/*.js',
+                        'node_modules/**/build/*.js',
+                        'node_modules/**/client/*.js',
+                        'node_modules/**/dist/*.js'
                     ],
                     dest: 'wwwroot/lib/',
                     filter: 'isFile'
