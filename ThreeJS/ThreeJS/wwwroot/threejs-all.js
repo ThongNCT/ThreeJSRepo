@@ -881,10 +881,49 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var model_service_1 = require('./model.service');
 var ModelListComponent = (function () {
-    function ModelListComponent(service, route, router) {
+    function ModelListComponent(element, service, route, router) {
+        this.element = element;
         this.service = service;
         this.route = route;
         this.router = router;
+        var $element = $(this.element.nativeElement);
+        $element.find('#carousel span').append('<img src="img/gui/carousel_glare.png" class="glare" />');
+        $element.find('#thumbs a').append('<img src="img/gui/carousel_glare_small.png" class="glare" />');
+        $element.find('#carousel').carouFredSel({
+            responsive: true,
+            circular: false,
+            auto: false,
+            items: {
+                visible: 1,
+                width: 200,
+                height: '56%'
+            },
+            scroll: {
+                fx: 'directscroll'
+            }
+        });
+        $element.find('#thumbs').carouFredSel({
+            responsive: true,
+            circular: false,
+            infinite: false,
+            auto: false,
+            prev: '#prev',
+            next: '#next',
+            items: {
+                visible: {
+                    min: 2,
+                    max: 6
+                },
+                width: 150,
+                height: '66%'
+            }
+        });
+        $element.find('#thumbs a').click(function (e) {
+            $element.find('#carousel').trigger('slideTo', '#' + e.target.href.split('#').pop());
+            $element.find('#thumbs a').removeClass('selected');
+            $(e.target).addClass('selected');
+            return false;
+        });
     }
     ModelListComponent.prototype.isSelected = function (model) {
         return model.id === this.selectedId;
@@ -906,7 +945,7 @@ var ModelListComponent = (function () {
         core_1.Component({
             templateUrl: 'view/model-list.component.html'
         }), 
-        __metadata('design:paramtypes', [model_service_1.ModelService, router_1.ActivatedRoute, router_1.Router])
+        __metadata('design:paramtypes', [core_1.ElementRef, model_service_1.ModelService, router_1.ActivatedRoute, router_1.Router])
     ], ModelListComponent);
     return ModelListComponent;
 }());
