@@ -5,4 +5,4 @@ import { Component } from '@angular/core';
     <p>Welcome to the Crisis Center</p>
   `
 })
-export class CrisisCenterHomeComponent { }
+export class ModelHomeComponent { }

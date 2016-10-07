@@ -6,4 +6,4 @@ import { Component } from '@angular/core';
     <router-outlet></router-outlet>
   `
 })
-export class CrisisCenterComponent { }
+export class ModelComponent { }
