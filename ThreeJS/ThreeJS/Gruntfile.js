@@ -51,18 +51,21 @@ module.exports = function (grunt) {
         copy: {
             // Copy all libraries, take long time, consider to use at first time only
             libraries: {
-                files: [{ 
+                files: [{
                     expand: true,
                     // Get all src relatives to node_modules
-                    // ,copy to wwwroot/node_modules (create if not exist)
+                    // copy to wwwroot/node_modules (create if not exist)
                     cwd: 'node_modules/',
-                    src: ['**'], 
+                    src: ['**'],
                     dest: 'wwwroot/node_modules/'
                 }]
             },
-            appCripts: [{
-
-                }
+            appScripts: [{
+                expand: true,
+                cwd: 'external_modules/',
+                src: ['**'],
+                dest: 'wwwroot/external_modules/'
+            }
             ]
         },
 
@@ -78,6 +81,7 @@ module.exports = function (grunt) {
     // Define the default task so it will launch all other tasks
     // Compile ts files and concat into script
     grunt.registerTask('default', ['ts', 'concat']);
+    grunt.registerTask('copy script', ['copy:appScripts']);
     //grunt.registerTask('compile', ['ts']);
     //grunt.registerTask('combine', ['concat']);
     //grunt.registerTask('uglifyscript', ['ts', 'uglify', 'copy']);
