@@ -4,3 +4,5 @@ ThreeJS/ThreeJS/node_modules/**
 ThreeJS/ThreeJS/bin/**
 ThreeJS/ThreeJS/obj/**
 ThreeJS/ThreeJS/Properties/**
+*.js
+/ThreeJS/ThreeJS/wwwroot/app/node_modules/abbrev/*.js

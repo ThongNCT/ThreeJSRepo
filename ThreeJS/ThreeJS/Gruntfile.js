@@ -14,7 +14,6 @@ module.exports = function (grunt) {
     grunt.initConfig({
         ts: {
             base: {
-                //src: ['abc'],
                 src: [
                     'Scripts/app/boot.ts', 
                     'Scripts/app/**/*.ts'
@@ -54,7 +53,7 @@ module.exports = function (grunt) {
                 files: [{ 
                     expand: true, 
                     src: [
-                        'node_modules/**',
+                        'node_modules/**/*.js',
                         'external_modules/**'
                     ], 
                     dest: 'wwwroot/' 
