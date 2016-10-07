@@ -17,7 +17,29 @@ export class ModelListComponent implements OnInit {
     private service: ModelService,
     private route: ActivatedRoute,
     private router: Router
-  ) { 
+  ) {}
+
+  isSelected(model: Model) {
+    return model.id === this.selectedId;
+  }
+
+  ngOnInit() {
+    this.route.params.forEach((params: Params) => {
+      this.selectedId = params['id'];
+      this.service.getModels()
+        .then(models => this.models = models);
+    });
+    this.initCarousel();
+  }
+
+  onSelect(model: Model) {
+    this.selectedId = model.id;
+
+    // Navigate with relative link
+    this.router.navigate([model.id], { relativeTo: this.route });
+  }
+
+  initCarousel() {
     let $element = $(this.element.nativeElement);
     $element.find('#carousel span').append('<img src="img/gui/carousel_glare.png" class="glare" />');
     $element.find('#thumbs a').append('<img src="img/gui/carousel_glare_small.png" class="glare" />');
@@ -61,22 +83,5 @@ export class ModelListComponent implements OnInit {
     });
   }
 
-  isSelected(model: Model) {
-    return model.id === this.selectedId;
-  }
-
-  ngOnInit() {
-    this.route.params.forEach((params: Params) => {
-      this.selectedId = params['id'];
-      this.service.getModels()
-        .then(models => this.models = models);
-    });
-  }
-
-  onSelect(model: Model) {
-    this.selectedId = model.id;
-
-    // Navigate with relative link
-    this.router.navigate([model.id], { relativeTo: this.route });
-  }
+  
 }
