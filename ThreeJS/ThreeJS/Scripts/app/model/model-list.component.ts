@@ -1,21 +1,11 @@
 import { Component, OnInit }      from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
-
 import { Model, ModelService } from './model.service';
 
 @Component({
-  template: `
-    <ul class="items">
-      <li *ngFor="let model of models"
-        [class.selected]="isSelected(model)"
-        (click)="onSelect(model)">
-        <span class="badge">{{model.id}}</span> {{model.name}}
-      </li>
-    </ul>
-
-    <router-outlet></router-outlet>
-  `
+  templateUrl: 'view/model-list.component.html' 
 })
+
 export class ModelListComponent implements OnInit {
   models: Model[];
   public selectedId: number;

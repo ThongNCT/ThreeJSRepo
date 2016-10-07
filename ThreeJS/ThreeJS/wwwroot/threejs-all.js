@@ -1529,7 +1529,7 @@ var ModelListComponent = (function () {
     };
     ModelListComponent = __decorate([
         core_1.Component({
-            template: "\n    <ul class=\"items\">\n      <li *ngFor=\"let model of models\"\n        [class.selected]=\"isSelected(model)\"\n        (click)=\"onSelect(model)\">\n        <span class=\"badge\">{{model.id}}</span> {{model.name}}\n      </li>\n    </ul>\n\n    <router-outlet></router-outlet>\n  "
+            templateUrl: 'view/model-list.component.html'
         }), 
         __metadata('design:paramtypes', [model_service_1.ModelService, router_1.ActivatedRoute, router_1.Router])
     ], ModelListComponent);
@@ -1624,7 +1624,7 @@ var ModelComponent = (function () {
     }
     ModelComponent = __decorate([
         core_1.Component({
-            template: "\n    <h2>CRISIS CENTER</h2>\n    <router-outlet></router-outlet>\n  "
+            template: "\n    <div class=\"container\">\n      <router-outlet></router-outlet>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], ModelComponent);
